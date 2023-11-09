@@ -7,17 +7,21 @@ import scala.collection.mutable.ListBuffer
   println(jane.name)
 
   // wtfs
-  println(3 + 'a') // 100
-  // println(3 + " concat") // 3 concatted
-  println('a' == 97) // true
-
   val explicit_char: Char = 'a'
   val explicit_int: Int = '3'
 
-  println(3 + explicit_char) // 100
-  // println(explicit_int + " concat") // 51 concatted
-  println(explicit_char == 97) // true
+  println(3 + 'a') // 100
+  println('a' + 3) // 100
+  println(3 - 'a') // -94
+  println(3 * 'a') // 291
+  println('a' / 3) // 32
+  println('a' == 97) // true
 
+  println(3 + " concat") // 3 concatted
+  println(explicit_int + " concat") // 51 concatted
+
+  println(explicit_char + 3) // 100
+  println(explicit_char == 97) // true
 
 // imperative
 def double(ints: List[Int]): List[Int] =
@@ -32,6 +36,7 @@ val numbers = double(old_numbers)
 // functional
 val f_numbers = old_numbers.map(_ * 2)
 
+// case class 
 case class Person(
   name: String,
   surname: String,
@@ -40,9 +45,11 @@ case class Person(
 def p(name: String, surname: String): Person =
   Person(name, surname)
 
+// implicit value
 implicit val reverseOrdering: Ordering[Int] = Ordering.Int.reverse
 // List(1, 2, 3).sorted // List(3, 2, 1)
 
+// pattern matching
 def isTruthy(a: Matchable) = a match
   case 0 | "" => false
   case _ => true

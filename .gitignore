@@ -13,7 +13,8 @@ target/
 .bloop
 .bsp
 .metals
-project/metals.sbt
+.ammonite/
+metals.sbt
 
 # other
 .history
