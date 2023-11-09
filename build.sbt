@@ -1,6 +1,6 @@
 val scala3Version = "3.3.1"
 
-lazy val myWarts = project.in(file("my-warts")).settings(
+lazy val myWarts = project.in(file(".warts")).settings(
   scalaVersion := scala3Version,
   libraryDependencies ++= Seq(
     "org.wartremover" % "wartremover" % wartremover.Wart.PluginVersion cross CrossVersion.full
