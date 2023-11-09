@@ -1,5 +1,12 @@
 val scala3Version = "3.3.1"
 
+lazy val myWarts = project.in(file("my-warts")).settings(
+  scalaVersion := scala3Version,
+  libraryDependencies ++= Seq(
+    "org.wartremover" % "wartremover" % wartremover.Wart.PluginVersion cross CrossVersion.full
+  )
+)
+
 lazy val root = project
   .in(file("."))
   .settings(
@@ -12,7 +19,7 @@ lazy val root = project
 
     Global / onChangedBuildSource := ReloadOnSourceChanges,
 
-    wartremoverErrors ++= Warts.unsafe,
+    // wartremoverErrors ++= Warts.unsafe,
     wartremoverErrors ++= Seq(
       Wart.ArrayEquals, Wart.AnyVal, Wart.Equals, Wart.ExplicitImplicitTypes,
       Wart.FinalCaseClass, Wart.ImplicitConversion, 
@@ -24,4 +31,8 @@ lazy val root = project
       ContribWart.MissingOverride, ContribWart.NoNeedForMonad, 
       ContribWart.UnintendedLaziness, ContribWart.DiscardedFuture,
     ),
+
+    wartremoverErrors += Wart.custom("mywarts.Unimplemented"),
+    wartremover.WartRemover.dependsOnLocalProjectWarts(myWarts),
   )
+
