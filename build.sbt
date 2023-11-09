@@ -1,6 +1,6 @@
 val scala3Version = "3.3.1"
 
-lazy val myWarts = project.in(file(".warts")).settings(
+lazy val customWarts = project.in(file(".warts")).settings(
   scalaVersion := scala3Version,
   scalaSource in Compile := baseDirectory.value / "src" / "main" / "warts",
   libraryDependencies ++= Seq(
@@ -35,7 +35,7 @@ lazy val root = project
       ContribWart.UnintendedLaziness, ContribWart.DiscardedFuture,
     ),
 
-    wartremoverErrors += Wart.custom("mywarts.Unimplemented"),
-    wartremover.WartRemover.dependsOnLocalProjectWarts(myWarts),
+    wartremoverErrors += Wart.custom("customWarts.Unimplemented"),
+    wartremover.WartRemover.dependsOnLocalProjectWarts(customWarts),
   )
 

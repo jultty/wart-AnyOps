@@ -1,4 +1,4 @@
-package mywarts
+package customWarts
 
 import org.wartremover.{ WartTraverser, WartUniverse }
 
