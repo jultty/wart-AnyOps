@@ -13,6 +13,15 @@ lazy val root = project
     Global / onChangedBuildSource := ReloadOnSourceChanges,
 
     wartremoverErrors ++= Warts.unsafe,
-    wartremoverErrors ++= Seq(Wart.Nothing, Wart.ImplicitConversion),
-    wartremoverErrors += ContribWart.OldTime,
+    wartremoverErrors ++= Seq(
+      Wart.ArrayEquals, Wart.AnyVal, Wart.Equals, Wart.ExplicitImplicitTypes,
+      Wart.FinalCaseClass, Wart.ImplicitConversion, 
+      Wart.JavaConversions, Wart.JavaSerializable, Wart.LeakingSealed, 
+      Wart.Nothing, Wart.Option2Iterable, Wart.PublicInference,
+    ),
+    wartremoverErrors ++= Seq(
+      ContribWart.OldTime, ContribWart.UnsafeInheritance,
+      ContribWart.MissingOverride, ContribWart.NoNeedForMonad, 
+      ContribWart.UnintendedLaziness, ContribWart.DiscardedFuture,
+    ),
   )

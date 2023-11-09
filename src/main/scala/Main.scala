@@ -9,16 +9,26 @@ import scala.collection.mutable.ListBuffer
   // wtfs
   val explicit_char: Char = 'a'
   val explicit_int: Int = '3'
+  //
+  // catched by wartremover
+  // println(3 + " concat") // 3 concatted
+  // println(explicit_int + " concat") // 51 concatted
 
+  println('3' + '0') // 99 (??)
+  println('a' + 'a') // 194 (97+97)
   println(3 + 'a') // 100
+  println('a' + explicit_int) // 148 (?)
+  println(explicit_int + 'a') // 148 (?)
+  println(3 + explicit_char) // 100
+  println(explicit_char + 3) // 100
+  println(explicit_char + explicit_int) // 148
+  println(explicit_int + explicit_char) // 148
+
   println('a' + 3) // 100
   println(3 - 'a') // -94
   println(3 * 'a') // 291
   println('a' / 3) // 32
   println('a' == 97) // true
-
-  println(3 + " concat") // 3 concatted
-  println(explicit_int + " concat") // 51 concatted
 
   println(explicit_char + 3) // 100
   println(explicit_char == 97) // true
@@ -37,7 +47,7 @@ val numbers = double(old_numbers)
 val f_numbers = old_numbers.map(_ * 2)
 
 // case class 
-case class Person(
+final case class Person(
   name: String,
   surname: String,
 )
