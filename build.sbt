@@ -2,9 +2,10 @@ val scala3Version = "3.3.1"
 
 lazy val myWarts = project.in(file(".warts")).settings(
   scalaVersion := scala3Version,
+  scalaSource in Compile := baseDirectory.value / "src" / "main" / "warts",
   libraryDependencies ++= Seq(
     "org.wartremover" % "wartremover" % wartremover.Wart.PluginVersion cross CrossVersion.full
-  )
+  ),
 )
 
 lazy val root = project
@@ -13,11 +14,13 @@ lazy val root = project
     name := "hello-scala",
     version := "0.1.0",
     scalaVersion := scala3Version,
+    scalaSource in Compile := baseDirectory.value / "src" / "main",
 
     logLevel := Level.Warn,
     run / watchLogLevel := Level.Warn,
 
     Global / onChangedBuildSource := ReloadOnSourceChanges,
+
 
     // wartremoverErrors ++= Warts.unsafe,
     wartremoverErrors ++= Seq(
