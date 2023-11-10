@@ -11,10 +11,10 @@ import scala.collection.mutable.ListBuffer
   val explicit_int: Int = '3'
   //
   // catched by wartremover
-  // println(3 + " concat") // 3 concatted
-  // println(explicit_int + " concat") // 51 concatted
+  println(3 + " concatted") // 3 concatted
+  println(explicit_int + " concatted") // 51 concatted
 
-  ???
+  // ??? // throws unimplemented
   println('3' + '0') // 99 (??)
   println('a' + 'a') // 194 (97+97)
   println(3 + 'a') // 100
@@ -33,6 +33,8 @@ import scala.collection.mutable.ListBuffer
 
   println(explicit_char + 3) // 100
   println(explicit_char == 97) // true
+
+  println("a strin" + 'g')
 
 // imperative
 def double(ints: List[Int]): List[Int] =
