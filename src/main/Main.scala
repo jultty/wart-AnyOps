@@ -16,17 +16,17 @@ import scala.collection.mutable.ListBuffer
 
   // ??? // throws unimplemented
 
-  // println('3' + '0') // 99
-  // println('a' + 'a') // 194 (97+97)
-  // println(3 + 'a') // 100
-  // println('a' + 3) // 100
-  // println('a' + explicit_int) // 148 (?)
-  // println(explicit_int + 'a') // 148 (?)
-  // println(3 + explicit_char) // 100
-  // println(explicit_char + 3) // 100
-  // println(explicit_char + explicit_int) // 148
-  // println(explicit_int + explicit_char) // 148
-  // println(explicit_char + explicit_char) // 148
+  println('3' + '0') // 99
+  println('a' + 'a') // 194 (97+97)
+  println(3 + 'a') // 100
+  println('a' + 3) // 100
+  println('a' + explicit_int) // 148 (?)
+  println(explicit_int + 'a') // 148 (?)
+  println(3 + explicit_char) // 100
+  println(explicit_char + 3) // 100
+  println(explicit_char + explicit_int) // 148
+  println(explicit_int + explicit_char) // 148
+  println(explicit_char + explicit_char) // 148
 
   println('3' - '0')
   println('a' - 'a')

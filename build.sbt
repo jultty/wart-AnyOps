@@ -35,7 +35,7 @@ lazy val root = project
       ContribWart.UnintendedLaziness, ContribWart.DiscardedFuture,
     ),
 
-    wartremoverErrors += Wart.custom("customWarts.Unimplemented"),
+    wartremoverErrors += Wart.custom("customWarts.CharPlusAny"),
     wartremover.WartRemover.dependsOnLocalProjectWarts(customWarts),
   )
 
