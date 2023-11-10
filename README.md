@@ -1,4 +1,4 @@
-# wart-plusAny
+# wart-AnyOps
 
 Just a best-effort attempt at hacking some useful rules for my personal use.
 
