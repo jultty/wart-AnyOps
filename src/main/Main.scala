@@ -11,30 +11,61 @@ import scala.collection.mutable.ListBuffer
   val explicit_int: Int = '3'
   //
   // catched by wartremover
-  println(3 + " concatted") // 3 concatted
-  println(explicit_int + " concatted") // 51 concatted
+  // println(3 + " concatted") // 3 concatted
+  // println(explicit_int + " concatted") // 51 concatted
 
   // ??? // throws unimplemented
-  println('3' + '0') // 99 (??)
-  println('a' + 'a') // 194 (97+97)
-  println(3 + 'a') // 100
-  println('a' + explicit_int) // 148 (?)
-  println(explicit_int + 'a') // 148 (?)
-  println(3 + explicit_char) // 100
-  println(explicit_char + 3) // 100
-  println(explicit_char + explicit_int) // 148
-  println(explicit_int + explicit_char) // 148
 
-  println('a' + 3) // 100
-  println(3 - 'a') // -94
-  println(3 * 'a') // 291
-  println('a' / 3) // 32
+  // println('3' + '0') // 99
+  // println('a' + 'a') // 194 (97+97)
+  // println(3 + 'a') // 100
+  // println('a' + 3) // 100
+  // println('a' + explicit_int) // 148 (?)
+  // println(explicit_int + 'a') // 148 (?)
+  // println(3 + explicit_char) // 100
+  // println(explicit_char + 3) // 100
+  // println(explicit_char + explicit_int) // 148
+  // println(explicit_int + explicit_char) // 148
+  // println(explicit_char + explicit_char) // 148
+
+  println('3' - '0')
+  println('a' - 'a')
+  println(3 - 'a')
+  println('a' - 3)
+  println('a' - explicit_int)
+  println(explicit_int - 'a')
+  println(3 - explicit_char)
+  println(explicit_char - 3) 
+  println(explicit_char - explicit_int)
+  println(explicit_int - explicit_char)
+  println(explicit_char - explicit_char)
+
+  println('3' * '0')
+  println('a' * 'a')
+  println(3 * 'a')
+  println('a' * 3)
+  println('a' * explicit_int)
+  println(explicit_int * 'a')
+  println(3 * explicit_char)
+  println(explicit_char * 3) 
+  println(explicit_char * explicit_int)
+  println(explicit_int * explicit_char)
+  println(explicit_char * explicit_char)
+
+  println('3' / '0')
+  println('a' / 'a')
+  println(3 / 'a')
+  println('a' / 3)
+  println('a' / explicit_int)
+  println(explicit_int / 'a')
+  println(3 / explicit_char)
+  println(explicit_char / 3) 
+  println(explicit_char / explicit_int)
+  println(explicit_int / explicit_char)
+  println(explicit_char / explicit_char)
+
   println('a' == 97) // true
-
-  println(explicit_char + 3) // 100
   println(explicit_char == 97) // true
-
-  println("a strin" + 'g')
 
 // imperative
 def double(ints: List[Int]): List[Int] =
