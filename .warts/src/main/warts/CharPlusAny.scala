@@ -32,7 +32,6 @@ object CharPlusAny extends WartTraverser {
             t.asExpr match {
               case PrimitivePlusChar() =>
                 error(tree.pos, error_message)
-              case '{ ($x1: Char) + ($x2: Char) } =>
               case _ =>
                 super.traverseTree(tree)(owner)
             }
