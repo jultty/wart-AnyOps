@@ -37,8 +37,9 @@ lazy val root = project
 
     wartremover.WartRemover.dependsOnLocalProjectWarts(customWarts),
     wartremoverErrors ++= Seq(
-      Wart.custom("customWarts.CharPlusAny"),
-      Wart.custom("customWarts.CharMinusAny"),
+      Wart.custom("customWarts.CharPlusAny"), Wart.custom("customWarts.CharMinusAny"),
+      Wart.custom("customWarts.CharTimesAny"), Wart.custom("customWarts.CharDividedByAny"),
+      Wart.custom("customWarts.CharEqualsAny"),
     ),
   )
 
